@@ -22,3 +22,10 @@ src_compile() {
 	rm -f Makefile
 	./configure --prefix=/usr --fixed
 }
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	doenv LESSOPEN "| /usr/bin/lesspipe.sh %s"
+}
