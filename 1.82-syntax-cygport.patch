@@ -1,0 +1,11 @@
+--- origsrc/lesspipe-1.82/code2color	2013-01-14 09:30:06.000000000 -0600
++++ src/lesspipe-1.82/code2color	2013-08-02 03:54:57.529345600 -0500
+@@ -3198,7 +3198,7 @@ $LANGUAGE{'patch'}        = {
+ #
+ 
+ $LANGUAGE{'shellscript'} = {
+-	'filename' => '\\.(sh|shell)$',
++	'filename' => '\\.(sh|shell|cygport|cygpart|cygclass)$',
+ 	'regex' => '^\\s*#\\s*![^\\s]*(sh|bash|ash|zsh|ksh)',
+ 	'patterns' => [ {
+ 		'name' => 'comment',

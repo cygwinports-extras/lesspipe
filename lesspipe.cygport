@@ -1,0 +1,24 @@
+NAME="lesspipe"
+VERSION=1.82
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="Input filter for less supporting many file types"
+DESCRIPTION="lesspipe.sh is an input filter for the pager less as described in
+less's man page. The script allows you to view files with binary content,
+compressed files, archives and files contained in archives. It supports many
+formats (both as plain and compressed files using gzip, bzip2 and other
+compression programs)."
+HOMEPAGE="http://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
+SRC_URI="mirror://sourceforge/lesspipe/lesspipe-${VERSION}.tar.gz"
+PATCH_URI="1.82-syntax-cygport.patch"
+
+REQUIRES="antiword binutils bzip2 cabextract cpio djvulibre file genisoimage \
+ ghostscript gpg groff gzip id3v2 ImageMagick libiconv lynx lzip p7zip perl \
+ poppler tar texlive unrar unrtf unzip xlhtml xz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	rm -f Makefile
+	./configure --prefix=/usr --fixed
+}
